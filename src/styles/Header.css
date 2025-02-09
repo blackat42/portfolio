@@ -1,0 +1,66 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background: linear-gradient(to bottom, #26aae3, #ffffff);
+    height: 100px;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #eeeeee;
+    font-family: "Poppins", sans-serif;
+}
+
+.header-right ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.header-right ul li {
+    display: inline-block;
+}
+
+.header-right ul li a {
+    color: #eeeeee;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 12px 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.header-right ul li a:hover {
+    background-color: rgba(0, 173, 181, 0.2);
+    border: 2px solid #00adb5;
+    box-shadow: 0 0 12px rgba(0, 173, 181, 0.5);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .header-right ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-right ul li a {
+        font-size: 1.3em;
+        padding: 10px 15px;
+    }
+}

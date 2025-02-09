@@ -1,0 +1,58 @@
+.experiences {
+    background-color: #f5f5f5;
+}
+
+.educationText {
+    font-family: "Poppins";
+    font-size: 5rem;
+    font-weight: 600;
+    color: #26aae3;
+}
+
+.role {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #222;
+}
+
+.schoolName {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.degree {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #666;
+}
+
+.experienceContainer {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.schoolName {
+    font-size: 2em;
+    font-weight: bold;
+    color: #222;
+}
+
+.role {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.description ul {
+    padding-left: 20px;
+}
+
+.description li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+    color: #333;
+}

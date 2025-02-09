@@ -1,0 +1,63 @@
+.title {
+    font-size: 5rem;
+    font-weight: 600;
+    color: #26aae3;
+    margin-bottom: 2rem;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    background-color: #f9f9f9;
+}
+
+.categoryTitle {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.techs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+}
+
+.tech {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.tech svg {
+    font-size: 3rem;
+    color: #666;
+}
+
+.tech span {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    color: #555;
+    display: none;
+}
+
+.tech:hover span {
+    display: inline;
+}
+
+.tech:hover svg {
+    display: none;
+}

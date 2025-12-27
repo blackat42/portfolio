@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.aed8be68.css",
-    "main.js": "/portfolio/static/js/main.565eca1f.js",
+    "main.js": "/portfolio/static/js/main.afecbd4c.js",
     "static/js/488.f30ea4ab.chunk.js": "/portfolio/static/js/488.f30ea4ab.chunk.js",
     "static/media/myportfolio.jpg": "/portfolio/static/media/myportfolio.98b26005152be94c8785.jpg",
     "static/media/corsair_logo.png": "/portfolio/static/media/corsair_logo.2d46dc022053b3be4cbb.png",
@@ -9,11 +9,11 @@
     "static/media/hiptech.svg": "/portfolio/static/media/hiptech.9eacac7492b60cafbd2cf814e596d98d.svg",
     "index.html": "/portfolio/index.html",
     "main.aed8be68.css.map": "/portfolio/static/css/main.aed8be68.css.map",
-    "main.565eca1f.js.map": "/portfolio/static/js/main.565eca1f.js.map",
+    "main.afecbd4c.js.map": "/portfolio/static/js/main.afecbd4c.js.map",
     "488.f30ea4ab.chunk.js.map": "/portfolio/static/js/488.f30ea4ab.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aed8be68.css",
-    "static/js/main.565eca1f.js"
+    "static/js/main.afecbd4c.js"
   ]
 }

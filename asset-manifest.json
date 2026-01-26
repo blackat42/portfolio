@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c9daf42d.css",
-    "main.js": "/portfolio/static/js/main.1f18d7d7.js",
+    "main.css": "/portfolio/static/css/main.7aa5e79e.css",
+    "main.js": "/portfolio/static/js/main.ec0af8fc.js",
     "static/js/488.f30ea4ab.chunk.js": "/portfolio/static/js/488.f30ea4ab.chunk.js",
     "static/media/myportfolio.jpg": "/portfolio/static/media/myportfolio.98b26005152be94c8785.jpg",
     "static/media/corsair_logo.png": "/portfolio/static/media/corsair_logo.2d46dc022053b3be4cbb.png",
     "static/media/hcmut.png": "/portfolio/static/media/hcmut.3fb9197e460abb0ae811.png",
     "static/media/hiptech.svg": "/portfolio/static/media/hiptech.9eacac7492b60cafbd2cf814e596d98d.svg",
     "index.html": "/portfolio/index.html",
-    "main.c9daf42d.css.map": "/portfolio/static/css/main.c9daf42d.css.map",
-    "main.1f18d7d7.js.map": "/portfolio/static/js/main.1f18d7d7.js.map",
+    "main.7aa5e79e.css.map": "/portfolio/static/css/main.7aa5e79e.css.map",
+    "main.ec0af8fc.js.map": "/portfolio/static/js/main.ec0af8fc.js.map",
     "488.f30ea4ab.chunk.js.map": "/portfolio/static/js/488.f30ea4ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9daf42d.css",
-    "static/js/main.1f18d7d7.js"
+    "static/css/main.7aa5e79e.css",
+    "static/js/main.ec0af8fc.js"
   ]
 }

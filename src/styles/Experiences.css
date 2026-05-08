@@ -1,58 +1,191 @@
-.experiences {
-    background-color: #f5f5f5;
+.experiences-section {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(19, 200, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(135deg, #09111f 0%, #121a29 58%, #171f23 100%);
+    background-size: 68px 68px, 68px 68px, auto;
+    color: var(--white);
 }
 
-.educationText {
-    font-family: "Poppins";
-    font-size: 5rem;
-    font-weight: 600;
-    color: #26aae3;
+.experiences-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(120deg, transparent 0 20%, rgba(255, 112, 89, 0.12) 20% 20.3%, transparent 20.3% 100%),
+        linear-gradient(44deg, transparent 0 73%, rgba(168, 240, 96, 0.12) 73% 73.35%, transparent 73.35% 100%);
 }
 
-.role {
-    font-size: 1rem;
-    font-weight: 300;
-    color: #222;
+.experiences-section .section-heading {
+    position: relative;
+    z-index: 1;
 }
 
-.schoolName {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #222;
+.experiences-section .section-heading h2 {
+    color: var(--white);
 }
 
-.degree {
-    font-size: 1.5em;
-    font-weight: 400;
-    color: #666;
+.experiences-section .section-heading p {
+    color: rgba(255, 255, 255, 0.68);
 }
 
-.experienceContainer {
-    background-color: #f9f9f9;
-    padding: 15px;
+.experience-list {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 1rem;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    display: grid;
+    grid-template-columns: 54px 72px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    padding: clamp(1rem, 2.4vw, 1.45rem);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.075);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(18px);
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        background var(--transition-normal);
 }
 
-.schoolName {
-    font-size: 2em;
-    font-weight: bold;
-    color: #222;
+.experience-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(19, 200, 255, 0.35);
+    background: rgba(255, 255, 255, 0.105);
 }
 
-.role {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
+.experience-index {
+    color: rgba(255, 255, 255, 0.34);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 64px;
 }
 
-.description ul {
-    padding-left: 20px;
+.experience-logo {
+    display: grid;
+    width: 64px;
+    height: 64px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--ink);
 }
 
-.description li {
-    margin-bottom: 5px;
+.experience-logo img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+.experience-body {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.experience-topline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.experience-topline > span {
+    color: var(--lime);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 700;
     line-height: 1.5;
-    color: #333;
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.45rem;
+}
+
+.tag-row span {
+    padding: 0.36rem 0.5rem;
+    border: 1px solid rgba(19, 200, 255, 0.24);
+    border-radius: 8px;
+    background: rgba(19, 200, 255, 0.08);
+    color: rgba(255, 255, 255, 0.74);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.experience-card h3 {
+    color: var(--white);
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.experience-role {
+    width: fit-content;
+    color: var(--cyan);
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+.experience-body ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 1rem;
+    padding-left: 1rem;
+}
+
+.experience-body li {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+.experience-body li::marker {
+    color: var(--coral);
+}
+
+@media (max-width: 920px) {
+    .experience-body ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .experience-card {
+        grid-template-columns: 44px minmax(0, 1fr);
+    }
+
+    .experience-index {
+        display: none;
+    }
+
+    .experience-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .experience-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .experience-topline {
+        flex-direction: column;
+    }
+
+    .tag-row {
+        justify-content: flex-start;
+    }
 }

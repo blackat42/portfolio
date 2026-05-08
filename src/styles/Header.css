@@ -1,66 +1,196 @@
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 10%;
-    background: linear-gradient(to bottom, #26aae3, #ffffff);
-    height: 100px;
+    justify-content: space-between;
+    min-height: 78px;
+    padding: 0.85rem clamp(1rem, 5vw, 5.5rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(7, 16, 27, 0.86);
+    backdrop-filter: blur(18px);
+    color: var(--white);
 }
 
-.header-left h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #eeeeee;
-    font-family: "Poppins", sans-serif;
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.brand-mark {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid rgba(19, 200, 255, 0.55);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, rgba(19, 200, 255, 0.95), rgba(168, 240, 96, 0.95)),
+        #0c1626;
+    color: #07101b;
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    font-weight: 800;
+    box-shadow: var(--shadow-glow);
+}
+
+.brand-name,
+.brand-role {
+    display: block;
+    letter-spacing: 0;
+}
+
+.brand-name {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.brand-role {
+    color: rgba(255, 255, 255, 0.62);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hamburger {
+    position: relative;
+    z-index: 1001;
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 10px;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--white);
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.hamburger span:nth-child(1) {
+    top: 13px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 20px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 27px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .header-right ul {
-    list-style: none;
     display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
 }
 
-.header-right ul li {
-    display: inline-block;
-}
-
-.header-right ul li a {
-    color: #eeeeee;
+.header-right a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0.62rem 0.85rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.76);
+    cursor: pointer;
+    font-size: 0.92rem;
+    font-weight: 600;
     text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 500;
-    padding: 12px 18px;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
-    position: relative;
+    transition:
+        color var(--transition-normal),
+        background var(--transition-normal),
+        border-color var(--transition-normal);
 }
 
-.header-right ul li a:hover {
-    background-color: rgba(0, 173, 181, 0.2);
-    border: 2px solid #00adb5;
-    box-shadow: 0 0 12px rgba(0, 173, 181, 0.5);
-    transform: scale(1.1);
+.header-right a:hover,
+.header-right a.active {
+    border-color: rgba(19, 200, 255, 0.25);
+    background: rgba(19, 200, 255, 0.1);
+    color: var(--white);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 840px) {
     .header {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding: 20px;
+        min-height: 70px;
+        padding: 0.75rem 1rem;
+    }
+
+    .brand-role {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .header-right {
+        position: fixed;
+        top: 70px;
+        right: 1rem;
+        left: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0);
+        border-radius: 8px;
+        background: rgba(7, 16, 27, 0.96);
+        box-shadow: var(--shadow-md);
+        transition:
+            max-height var(--transition-normal),
+            border-color var(--transition-normal);
+    }
+
+    .header-right.active {
+        max-height: 360px;
+        border-color: rgba(255, 255, 255, 0.12);
     }
 
     .header-right ul {
-        flex-direction: column;
-        gap: 15px;
+        display: grid;
+        gap: 0.35rem;
+        padding: 0.65rem;
     }
 
-    .header-right ul li a {
-        font-size: 1.3em;
-        padding: 10px 15px;
+    .header-right a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand-name {
+        font-size: 0.92rem;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
     }
 }

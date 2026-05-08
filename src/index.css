@@ -1,10 +1,197 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f4f7fb;
+    --bg-panel: #ffffff;
+    --ink: #09111f;
+    --ink-soft: #162237;
+    --muted: #627086;
+    --muted-strong: #405066;
+    --line: rgba(9, 17, 31, 0.12);
+    --line-bright: rgba(45, 212, 255, 0.3);
+    --cyan: #13c8ff;
+    --lime: #a8f060;
+    --coral: #ff7059;
+    --violet: #7657ff;
+    --white: #ffffff;
+    --mono: "JetBrains Mono", "Consolas", monospace;
+    --font: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    --shadow-sm: 0 12px 30px rgba(9, 17, 31, 0.08);
+    --shadow-md: 0 24px 70px rgba(9, 17, 31, 0.16);
+    --shadow-glow: 0 0 36px rgba(19, 200, 255, 0.24);
+    --transition-fast: 160ms ease;
+    --transition-normal: 260ms ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 92px;
+}
 
 body {
-    margin: 0;
-    font-family: "Poppins";
+    min-width: 320px;
+    overflow-x: hidden;
+    background:
+        linear-gradient(90deg, rgba(19, 200, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(19, 200, 255, 0.04) 1px, transparent 1px),
+        var(--bg);
+    background-size: 72px 72px, 72px 72px, auto;
+    color: var(--ink);
+    font-family: var(--font);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f8f9fa;
-    color: #ffffff;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    background: rgba(19, 200, 255, 0.3);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e9eef7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--cyan), var(--lime));
+    border-radius: 999px;
+    border: 2px solid #e9eef7;
+}
+
+.section-shell {
+    position: relative;
+    padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5.5rem);
+}
+
+.section-heading {
+    display: grid;
+    gap: 0.85rem;
+    max-width: 760px;
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+}
+
+.section-heading.align-left {
+    margin-left: 0;
+    text-align: left;
+}
+
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    color: var(--cyan);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.align-left .section-kicker {
+    margin-left: 0;
+}
+
+.section-heading h2 {
+    color: var(--ink);
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: clamp(1rem, 2vw, 1.12rem);
+    line-height: 1.75;
+}
+
+.primary-action,
+.secondary-action,
+.contact-cv {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    min-height: 48px;
+    padding: 0.85rem 1.05rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.96rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.primary-action,
+.contact-cv {
+    border: 1px solid rgba(19, 200, 255, 0.4);
+    background: linear-gradient(135deg, var(--cyan), var(--lime));
+    color: #07101b;
+    box-shadow: var(--shadow-glow);
+}
+
+.secondary-action {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+}
+
+.primary-action:hover,
+.secondary-action:hover,
+.contact-cv:hover {
+    transform: translateY(-3px);
+}
+
+.secondary-action:hover {
+    border-color: rgba(19, 200, 255, 0.45);
+    background: rgba(19, 200, 255, 0.12);
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 76px;
+    }
+
+    .section-shell {
+        padding: 4.5rem 1rem;
+    }
+
+    .section-heading,
+    .section-heading.align-left {
+        text-align: left;
+    }
+
+    .section-kicker,
+    .align-left .section-kicker {
+        margin-left: 0;
+    }
 }

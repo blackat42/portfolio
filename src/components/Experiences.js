@@ -1,131 +1,99 @@
-import * as React from "react";
-import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
+import React from "react";
 import ApartmentIcon from "@mui/icons-material/Apartment";
-import TimelineOppositeContent, {
-    timelineOppositeContentClasses,
-} from "@mui/lab/TimelineOppositeContent";
 import "../styles/Experiences.css";
 
 import comp1logo from "../images/hiptech.svg";
+import corsairLogo from "../images/corsair_logo.png";
 
-export default function LeftAlignedTimeline() {
+const experiences = [
+    {
+        company: "Corsair",
+        role: "AI/ML Engineer",
+        period: "January 2024 - Present",
+        logo: corsairLogo,
+        alt: "Corsair Logo",
+        tags: ["LangChain", "RAG", "Agents", "ChromaDB"],
+        bullets: [
+            "Developed and deployed a domain-specific AI chatbot using LangChain, Chroma, and HuggingFace embeddings to answer queries from technical PDFs and README files.",
+            "Engineered a Retrieval-Augmented Generation pipeline with markdown ingestion, recursive text chunking, and similarity-based vector retrieval.",
+            "Designed tool-using LangChain agents capable of dynamic reasoning and tool selection for multi-step question answering.",
+            "Built multi-tool agent flows with document lookup, JSON parsing, and API interaction to support enriched responses.",
+            "Implemented streaming agent responses with callback handlers to improve interactivity and reduce response latency.",
+            "Built evaluation benchmarks and used relevance scoring to improve chatbot response accuracy and retrieval quality.",
+        ],
+    },
+    {
+        company: "HIPTECH Solution",
+        role: "Software Engineer",
+        period: "March 2024 - Present",
+        logo: comp1logo,
+        alt: "HIPTECH Solution Logo",
+        tags: ["Qt", "C++", "Jira", "GitLab"],
+        bullets: [
+            "Developed and maintained software for managing devices, adjusting lighting, and controlling functions using the Qt Framework.",
+            "Worked with the team to design and implement new features across the product lifecycle.",
+            "Used JIRA for task tracking and GitLab for version control in collaborative delivery.",
+        ],
+    },
+    {
+        company: "Vietnam Blockchain Corporation",
+        role: "Intern - Web Developer",
+        period: "June 2023 - March 2024",
+        icon: <ApartmentIcon sx={{ fontSize: 34 }} />,
+        tags: ["Node.js", "REST API", "Backend", "Teamwork"],
+        bullets: [
+            "Developed backend services with Node.js, strengthening backend engineering and problem-solving skills.",
+            "Collaborated with a partner to develop a RESTful API for a collecting opinion application.",
+            "Maintained and optimized backend systems for reliability and performance.",
+        ],
+    },
+];
+
+export default function Experiences() {
     return (
-        <div className="container experiences">
-            <div className="educationText">Experience</div>
-            <Timeline
-                sx={{
-                    [`& .${timelineOppositeContentClasses.root}`]: {
-                        flex: 0.2,
-                    },
-                }}
-            >
-                <TimelineItem>
-                    <TimelineOppositeContent
-                        sx={{ marginTop: "10px" }}
-                        color="textSecondary"
-                    >
-                        March 2024 - Present
-                    </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineDot sx={{ bgcolor: "#ffffff" }}>
-                            <img
-                                src={comp1logo}
-                                width={50}
-                                height={50}
-                                sizes=""
-                                alt="HIPTECH Solution Logo"
-                            />
-                        </TimelineDot>
-                        <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                        <div className="experienceContainer">
-                            <div className="schoolName">HIPTECH Solution</div>
-                            <div className="role">Software Engineer</div>
-                            <div className="description">
-                                <ul>
-                                    <li>
-                                        Developed and maintained software for
-                                        managing devices, adjusting lighting,
-                                        and controlling functions using the Qt
-                                        Framework (C++).
-                                    </li>
-                                    <li>
-                                        Work with the team to design and
-                                        implement new features.
-                                    </li>
-                                    <li>
-                                        Participate in the full software
-                                        development lifecycle.
-                                    </li>
-                                    <li>
-                                        Proficient in using project management
-                                        and version control tools, including
-                                        JIRA for task tracking, GitLab for
-                                        version control
-                                    </li>
-                                </ul>
-                            </div>
+        <section className="section-shell experiences-section">
+            <div className="section-heading align-left">
+                <span className="section-kicker">Production work</span>
+                <h2>Experience</h2>
+                <p>
+                    Practical engineering across AI assistants, retrieval
+                    systems, desktop software, backend APIs, and team delivery.
+                </p>
+            </div>
+
+            <div className="experience-list">
+                {experiences.map((experience, index) => (
+                    <article className="experience-card" key={experience.company}>
+                        <div className="experience-index">
+                            {String(index + 1).padStart(2, "0")}
                         </div>
-                    </TimelineContent>
-                </TimelineItem>
-                <TimelineItem sx={{ marginTop: "20px" }}>
-                    <TimelineOppositeContent
-                        sx={{ marginTop: "25px" }}
-                        color="textSecondary"
-                    >
-                        June 2023 – March 2024
-                    </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineDot sx={{ bgcolor: "#ffffff" }}>
-                            <ApartmentIcon
-                                color="action"
-                                sx={{ fontSize: 50 }}
-                            />
-                        </TimelineDot>
-                    </TimelineSeparator>
-                    <TimelineContent>
-                        <div className="experienceContainer">
-                            <div className="schoolName">
-                                Vietnam Blockchain Corporation
-                            </div>
-                            <div className="role">Intern - Web Developer</div>
-                            <div className="description">
-                                <ul>
-                                    <li>
-                                        Developed a new backend for a project
-                                        using Node.js, demonstrating proficiency
-                                        in backend development and
-                                        problem-solving.
-                                    </li>
-                                    <li>
-                                        Collaborated closely with a partner to
-                                        develop a Restful API for a collecting
-                                        opinion application, enhancing skills in
-                                        backend development and teamwork.
-                                    </li>
-                                    <li>
-                                        Gained valuable experience working
-                                        within a team environment, contributing
-                                        to project discussions and problem
-                                        solving sessions.
-                                    </li>
-                                    <li>
-                                        Maintained and optimized backend systems
-                                        for a Node.js application, ensuring its
-                                        reliability and performance.
-                                    </li>
-                                </ul>
-                            </div>
+                        <div className="experience-logo">
+                            {experience.logo ? (
+                                <img src={experience.logo} alt={experience.alt} />
+                            ) : (
+                                experience.icon
+                            )}
                         </div>
-                    </TimelineContent>
-                </TimelineItem>
-            </Timeline>
-        </div>
+                        <div className="experience-body">
+                            <div className="experience-topline">
+                                <span>{experience.period}</span>
+                                <div className="tag-row">
+                                    {experience.tags.map((tag) => (
+                                        <span key={tag}>{tag}</span>
+                                    ))}
+                                </div>
+                            </div>
+                            <h3>{experience.company}</h3>
+                            <p className="experience-role">{experience.role}</p>
+                            <ul>
+                                {experience.bullets.map((bullet) => (
+                                    <li key={bullet}>{bullet}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </section>
     );
 }

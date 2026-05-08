@@ -1,45 +1,73 @@
 import "../styles/Contact.css";
 
-import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import {
+    FaFacebook,
+    FaInstagram,
+    FaLinkedin,
+    FaGithub,
+    FaDownload,
+} from "react-icons/fa";
+import { HiOutlineArrowUpRight } from "react-icons/hi2";
+
+const socialLinks = [
+    {
+        href: "https://www.linkedin.com/in/svn42/",
+        label: "LinkedIn",
+        icon: <FaLinkedin />,
+    },
+    {
+        href: "https://github.com/blackat42",
+        label: "GitHub",
+        icon: <FaGithub />,
+    },
+    {
+        href: "https://www.facebook.com/vnhsngxxx/",
+        label: "Facebook",
+        icon: <FaFacebook />,
+    },
+    {
+        href: "https://www.instagram.com/svnation__/",
+        label: "Instagram",
+        icon: <FaInstagram />,
+    },
+];
 
 export default function Contact() {
     return (
-        <div className="container contact">
-            <div className="title">Contact</div>
-            <div className="thanks">
-                Thank you for visiting my portfolio. If you have any questions
-                or would like to get in touch, please feel free to contact me.
+        <section className="contact-section">
+            <div className="contact-copy">
+                <span className="section-kicker">Ready to build</span>
+                <h2>Let us turn domain problems into practical AI solutions.</h2>
+                <p>
+                    Thank you for visiting my portfolio. If you are exploring
+                    how AI can support a business process, product experience,
+                    knowledge base, or internal workflow, I would be happy to
+                    connect.
+                </p>
+                <a
+                    href={`${process.env.PUBLIC_URL}/cv.pdf`}
+                    download="Nguyen_Sang_CV.pdf"
+                    className="contact-cv"
+                >
+                    <FaDownload />
+                    Download CV
+                </a>
             </div>
+
             <div className="contactIcons">
-                <a
-                    href="https://www.facebook.com/vnhsngxxx/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <FaFacebook />
-                </a>
-                <a
-                    href="https://www.instagram.com/svnation__/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <FaInstagram />
-                </a>
-                <a
-                    href="https://www.linkedin.com/in/svn42/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <FaLinkedin />
-                </a>
-                <a
-                    href="https://github.com/blackat42"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <FaGithub />
-                </a>
+                {socialLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        key={link.label}
+                    >
+                        <span className="contact-icon">{link.icon}</span>
+                        <span>{link.label}</span>
+                        <HiOutlineArrowUpRight className="contact-arrow" />
+                    </a>
+                ))}
             </div>
-        </div>
+        </section>
     );
 }
